@@ -49,3 +49,13 @@ G:\Skola\C#\rozhodovani2\rozhodovani\rozhodovani\obj\Debug\Pribeh.g.cs
 G:\Skola\C#\rozhodovani2\rozhodovani\rozhodovani\obj\Debug\Pribeh.baml
 G:\Skola\C#\rozhodovani2\rozhodovani\rozhodovani\obj\Debug\Menu.g.cs
 G:\Skola\C#\rozhodovani2\rozhodovani\rozhodovani\obj\Debug\Menu.baml
+D:\ruzenja15\rozhodovani3\rozhodovani\rozhodovani\obj\Debug\rozhodovani.csprojResolveAssemblyReference.cache
+D:\ruzenja15\rozhodovani3\rozhodovani\rozhodovani\obj\Debug\Combat.g.cs
+D:\ruzenja15\rozhodovani3\rozhodovani\rozhodovani\obj\Debug\MainWindow.g.cs
+D:\ruzenja15\rozhodovani3\rozhodovani\rozhodovani\obj\Debug\Menu.g.cs
+D:\ruzenja15\rozhodovani3\rozhodovani\rozhodovani\obj\Debug\Pribeh.g.cs
+D:\ruzenja15\rozhodovani3\rozhodovani\rozhodovani\obj\Debug\App.g.cs
+D:\ruzenja15\rozhodovani3\rozhodovani\rozhodovani\obj\Debug\rozhodovani_MarkupCompile.cache
+D:\ruzenja15\rozhodovani3\rozhodovani\rozhodovani\obj\Debug\rozhodovani_MarkupCompile.lref
+D:\ruzenja15\rozhodovani3\rozhodovani\rozhodovani\obj\Debug\rozhodovani.exe
+D:\ruzenja15\rozhodovani3\rozhodovani\rozhodovani\obj\Debug\rozhodovani.pdb
