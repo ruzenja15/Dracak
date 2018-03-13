@@ -8,7 +8,7 @@ namespace rozhodovani
 {
    public class Dialog
     {
-
+        // Jsem Kuba Růženec a tohle je můj kód
         public Combat_controler Combat;
 
         public List<string> texty;
