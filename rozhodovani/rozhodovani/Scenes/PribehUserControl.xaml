@@ -1,0 +1,22 @@
+﻿<UserControl x:Class="rozhodovani.PribehUserControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:rozhodovani"
+             mc:Ignorable="d" 
+             d:DesignHeight="350" d:DesignWidth="525">
+
+    <Grid>
+
+        <TextBox x:Name="question" HorizontalAlignment="Left" Height="107" Margin="76,20,0,0" TextWrapping="Wrap"  Text="{Binding Text}" VerticalAlignment="Top" Width="325"/>
+
+        <Button x:Name="bttn1" CommandParameter="0" Content="{Binding Firstdecision}" Visibility="{Binding Visibility}" HorizontalAlignment="Center" Command="{Binding Nextdialog}" VerticalAlignment="Center" Width="75"/>
+        <Button x:Name="bttn2" CommandParameter="1" Content="{Binding Seconddecision}" Visibility="{Binding Visibility}" HorizontalAlignment="Left" Command="{Binding Nextdialog}" Margin="221,176,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="bttn3" IsEnabled="{Binding Enabled}" Content="Button" HorizontalAlignment="Left" Command="{Binding Nexttext}" VerticalAlignment="Top" Width="75" Margin="326,160,0,0"/>
+        <Frame x:Name="Combat_okno" NavigationUIVisibility="Hidden" />
+        <Label x:Name="Player_level" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="85,146,0,0"/>
+
+
+    </Grid>
+</UserControl>
