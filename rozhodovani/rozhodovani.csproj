@@ -135,5 +135,29 @@
   <ItemGroup>
     <Resource Include="img\Bandit.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\FrankiePixel.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Wasteland.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Fanatic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Delf_m.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Ogre.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Darklord.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Navigation;
 
 namespace rozhodovani
 {
@@ -19,7 +21,7 @@ namespace rozhodovani
             Playerimage = player.image;
             Playername = player.name;
             Playerdmg = player.DMG;
-            Playerdef = player.DEF;
+           // Playerdef = player.DEF;
             Playerint = player.INT;
 
             Enemymaxhealth = enemy.maxhealth;
@@ -33,6 +35,10 @@ namespace rozhodovani
             Energy = new EnergyCommand(this);
             Defend = new DefendCommand(this);
             Heal = new HealCommand(this);
+
+            ResultVisibility = Visibility.Hidden;
+
+
         }
 
 
@@ -111,6 +117,7 @@ namespace rozhodovani
                 }
             }
         }
+        public bool jeMrtvejhrac = false;
 
         private float playerhealth;
         public float Playerhealth
@@ -119,12 +126,15 @@ namespace rozhodovani
             set
             {
                 if (playerhealth != value)
-                {
-                   
+                {            
                     playerhealth = value;
-                    OnPropertyChanged("Playerhealth");
                     if (playerhealth <= 0)
-                        Combat.OnBattleEndEvent(1);
+                    {
+                        SetCombatResult(1, "Prohrál jsi","Red");
+                    }
+
+                    OnPropertyChanged("Playerhealth");
+
                 }
             }
         }
@@ -188,7 +198,7 @@ namespace rozhodovani
         }
 
 
-        private float playerdef;
+        /*private float playerdef;
         public float Playerdef
         {
             get { return playerdef; }
@@ -200,7 +210,7 @@ namespace rozhodovani
                     OnPropertyChanged("Playerdef");
                 }
             }
-        }
+        }*/
 
         private float playerdmg;
         public float Playerdmg
@@ -233,7 +243,7 @@ namespace rozhodovani
 
 
         //ENEMY
-
+        public bool jeMrtvejenemy = false;
 
         private float enemymaxhealth;
         public float Enemymaxhealth
@@ -253,12 +263,18 @@ namespace rozhodovani
         private float enemyhealth;
         public float Enemyhealth
         {
+
             get { return enemyhealth; }
             set
             {
                 if (enemyhealth != value)
                 {
                     enemyhealth = value;
+                    if(enemyhealth <= 0)
+                    {
+                        SetCombatResult(0, "Vyhrál jsi", "Green", "Zvýšil se ti level (+1)");
+                    }
+
                     OnPropertyChanged("Enemyhealth");
                 }
             }
@@ -310,6 +326,90 @@ namespace rozhodovani
         }
 
 
+
+        //Pokračovat
+
+
+        private Visibility resultVisibility;
+        public Visibility ResultVisibility
+        {
+            get { return resultVisibility; }
+            set
+            {
+                if (resultVisibility != value)
+                {
+                    resultVisibility = value;
+                    OnPropertyChanged("ResultVisibility");
+                }
+            }
+        }
+
+
+
+        private string title;
+        public string Title
+        {
+            get { return title; }
+            set
+            {
+                if (title != value)
+                {
+                    title = value;
+                    OnPropertyChanged("Title");
+                }
+            }
+        }
+
+        private string reward;
+        public string Reward
+        {
+            get { return reward; }
+            set
+            {
+                if (reward != value)
+                {
+                    reward = value;
+                    OnPropertyChanged("Reward");
+                }
+            }
+        }
+
+        private int battleResult;
+        public int BattleResult
+        {
+            get { return battleResult; }
+            set
+            {
+                if (battleResult != value)
+                {
+                    battleResult = value;
+                    OnPropertyChanged("BattleResult");
+                }
+            }
+        }
+
+        private string color;
+        public string Color
+        {
+            get { return color; }
+            set
+            {
+                if (color != value)
+                {
+                    color = value;
+                    OnPropertyChanged("Color");
+                }
+            }
+        }
+
+        void SetCombatResult(int result, string title, string color, string reward = null)
+        {
+            ResultVisibility = Visibility.Visible;
+            Color = color;
+            Title = title;
+            Reward = reward;
+            BattleResult = result;
+        }
 
 
     }

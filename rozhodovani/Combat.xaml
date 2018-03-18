@@ -9,6 +9,9 @@
       Title="Combat">
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="img/Wasteland.png"/>
+        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*" />
             <ColumnDefinition Width="*" />
@@ -31,26 +34,49 @@
 
         <Label Content="{Binding Playername}" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="2"  HorizontalAlignment="Center" VerticalAlignment="Center"/>
         <Label  Content="{Binding EnemyName}" Grid.Column="2" Grid.Row="0" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+        
 
 
 
 
-        <ProgressBar x:Name="Playerhp" Maximum="{Binding Playermaxhealth}" Value="{Binding Playerhealth}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="1" Background="White" Foreground="Red" BorderBrush="White"/>
-        <TextBlock Text="HP" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <ProgressBar x:Name="Playerhp" Maximum="{Binding Playermaxhealth}" Value="{Binding Playerhealth}" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="1" Background="White" Foreground="Red" BorderBrush="#FF343434"/>
+        <TextBlock  Text="HP" Grid.Column="0" Grid.Row="1" Grid.ColumnSpan="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
-        <ProgressBar x:Name="Playermana" Maximum="{Binding Playermaxmana}" Value="{Binding Playermana}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1" Foreground="#FF0023FF" Background="White" BorderBrush="White"/>
+        <ProgressBar x:Name="Playermana" Maximum="{Binding Playermaxmana}" Value="{Binding Playermana}" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1" Foreground="#FF0023FF" Background="White" BorderBrush="#FF343434"/>
         <TextBlock Text="MANA" Grid.Column="1" Grid.Row="1" Grid.ColumnSpan="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
 
 
-        <ProgressBar x:Name="Enemyhp" Maximum="{Binding Enemymaxhealth}" Value="{Binding Enemyhealth}" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="1" Background="White" Foreground="Red" BorderBrush="White"/>
+        <ProgressBar x:Name="Enemyhp" Maximum="{Binding Enemymaxhealth}" Value="{Binding Enemyhealth}" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="1" Background="White" Foreground="Red" BorderBrush="#FF343434"/>
         <TextBlock Text="HP" Grid.Column="3" Grid.Row="1" Grid.ColumnSpan="1" HorizontalAlignment="Center" VerticalAlignment="Center"/>
 
 
-        <Button x:Name="Attack_Physical" Content="Physical Attack" Grid.Column="0" Grid.Row="3" Margin="7" Command="{Binding Physical}"  />
-        <Button x:Name="Attack_Energy" Content="Energy Attack" Grid.Column="1" Grid.Row="3" Margin="7" Command="{Binding Energy}" />
-        <Button x:Name="Defend" Content="Defend" Grid.Column="2" Grid.Row="3" Margin="7" Command="{Binding Defend}" />
-        <Button x:Name="Heal" Content="Heal" Grid.Column="3" Grid.Row="3" Margin="7" Command="{Binding Heal}"  />
+        <Button x:Name="Attack_Physical" Content="Physical Attack" Grid.Column="0" Grid.Row="3" Margin="7"  FontSize="17" Command="{Binding Physical}" FontFamily="Calibri" />
+        <Button x:Name="Attack_Energy" Content="Energy Attack" Grid.Column="1" Grid.Row="3" Margin="7"  FontSize="17" Command="{Binding Energy}" FontFamily="Calibri" />
+        <Button x:Name="Defend" Content="Defend" Grid.Column="2" Grid.Row="3" Margin="7"  FontSize="17" Command="{Binding Defend}" FontFamily="Calibri"/>
+        <Button x:Name="Heal" Content="Heal" Grid.Column="3" Grid.Row="3" Margin="7"  FontSize="17" Command="{Binding Heal}" FontFamily="Calibri"  />
+
+
+        <Grid Grid.RowSpan="4" Grid.ColumnSpan="4" Background="{Binding Color}" Visibility="{Binding ResultVisibility}">
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="2*"/>
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+
+            <Label Content="{Binding Title}" Grid.Column="0" Grid.Row="0" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="40" Grid.ColumnSpan="3" FontFamily="Calibri" />
+            <Label Content="{Binding Reward}"  Grid.Column="0" Grid.Row="1" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="40" Grid.ColumnSpan="3" FontFamily="Calibri"  />
+            <Button Grid.Column="1" Grid.Row="2" Margin="20" Content="Pokračovat" FontSize="20" Click="Button_Click_Continue" FontFamily="Calibri" />
+
+        </Grid>
 
 
 

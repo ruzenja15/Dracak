@@ -18,7 +18,7 @@ namespace rozhodovani
         public EnergyCommand(CombatViewModel combat)
         {
             data = combat;
-            manacost = data.Playermana * 0.10f;
+            manacost = data.Playermana * 0.30f;
 
         }
 
@@ -32,9 +32,17 @@ namespace rozhodovani
         public void Execute(object parameter)
         {
 
-            data.Enemyhealth -= data.Playerint;
-            data.Playermana -= manacost;
-            EnemyControler.Attack(data);
+            if (data.Playermana < manacost)
+            {
+
+            }
+            else
+            {
+                data.Enemyhealth -= data.Playerint;
+                data.Playermana -= manacost;
+                EnemyControler.Attack(data);
+            }
+
 
 
         }

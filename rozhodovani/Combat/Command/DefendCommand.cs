@@ -13,13 +13,21 @@ namespace rozhodovani
 
         private CombatViewModel data;
 
-        private float basedef;
+        //private float basedef;
+        private float defense;
+        private float EnemyDamage;
+        private float ManaUp;
 
 
         public DefendCommand(CombatViewModel combat)
         {
+
+
             data = combat;
-            basedef = data.Playerdef;
+            defense = data.Enemydmg * 0.2f;
+            EnemyDamage = data.Enemydmg;
+            ManaUp = data.Playermana * 0.10f;
+            //  basedef = data.Playerdef;
 
         }
 
@@ -32,9 +40,21 @@ namespace rozhodovani
 
         public void Execute(object parameter)
         {
-            data.Playerdef += basedef * 0.6f;
+
+            data.Enemydmg = defense;
+            data.Playermana += ManaUp;
+
+                if(data.Playermana >= data.Playermaxmana)
+            {
+                data.Playermana = data.Playermaxmana;
+
+            }
+
+
+            //data.Playerdef += basedef * 0.6f;
             EnemyControler.Attack(data);
-            data.Playerdef = basedef;
+            data.Enemydmg = EnemyDamage;
+            //data.Playerdef = basedef;
 
 
         }

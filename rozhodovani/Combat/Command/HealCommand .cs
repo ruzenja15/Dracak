@@ -19,7 +19,7 @@ namespace rozhodovani
         public HealCommand(CombatViewModel combat)
         {
             data = combat;
-            heal = data.Playerhealth * 0.5f;
+            heal = data.Playerhealth * 0.7f;
             manacost = data.Playermana * 0.40f;
 
 
@@ -35,11 +35,31 @@ namespace rozhodovani
         public void Execute(object parameter)
         {
 
-            data.Playerhealth += heal;
-            if (data.Playerhealth > data.Playermaxhealth)
+
+
+            
+            if (data.Playerhealth >= data.Playermaxhealth)
+            {
                 data.Playerhealth = data.Playermaxhealth;
-            data.Playermana -= manacost;
-            EnemyControler.Attack(data);
+
+            }
+            else if (data.Playermana < manacost)
+            {
+
+            }
+
+            else
+            {
+                data.Playerhealth += heal;
+                data.Playermana -= manacost;
+                EnemyControler.Attack(data);
+
+            }
+
+
+
+
+           
 
 
         }

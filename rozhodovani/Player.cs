@@ -10,7 +10,7 @@ namespace rozhodovani
     {
         public Player(int newlevel)
         {
-            image = "img/Frankie.png";
+            image = "img/FrankiePixel.png";
             level = newlevel;
             name = "Frankie";
             DMG = level * 5;
@@ -19,7 +19,7 @@ namespace rozhodovani
             health = maxhealth;
             maxmana = level * 10;
             mana = maxmana;
-            DEF = 25;
+            //DEF = 25;
 
         }
 

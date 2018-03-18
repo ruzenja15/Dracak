@@ -9,14 +9,36 @@
       Title="Pribeh">
 
     <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="img/1.jpg"/>
+        </Grid.Background>
 
-        <TextBox x:Name="question" HorizontalAlignment="Left" Height="107" Margin="76,20,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="325"/>
+        <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-        <Button x:Name="bttn1" Content="Button" Visibility="Hidden" HorizontalAlignment="Center"  Click="Next_Dialog" VerticalAlignment="Center" Width="75"/>
-        <Button x:Name="bttn2" Content="Button" Visibility="Hidden" HorizontalAlignment="Left" Click="Next_Dialog" Margin="221,176,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="bttn3" Content="Button" HorizontalAlignment="Left" Click="Next_Text" VerticalAlignment="Top" Width="75" Margin="326,160,0,0"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="4*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+
+
+        </Grid.RowDefinitions>
+
+
+
+
+        <TextBox x:Name="question" TextWrapping="Wrap" Text="TextBox" FontSize="18" Margin="25" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="0" Background="#33FFFFFF" BorderBrush="{x:Null}" FontFamily="Calibri"/>
+
+        <Button x:Name="bttn1" Content="Button" Visibility="Hidden" Click="Next_Dialog" Margin="8" FontSize="18" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="1" FontFamily="Calibri" />
+        <Button x:Name="bttn2" Content="Button" Visibility="Hidden"  Click="Next_Dialog" Margin="8" FontSize="18" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" FontFamily="Calibri"/>
+        <Button x:Name="bttn3" Content="Pokračovat" Click="Next_Text" Margin="8" FontSize="18" Grid.Column="2" Grid.Row="3" FontFamily="Calibri"/>
+        <Button x:Name="bttn4" Content="KONEC" Visibility="Hidden" Click="End_Game" Margin="8" FontSize="18" Grid.Column="1" Grid.Row="3" FontFamily="Calibri"/>
+
         <Frame x:Name="Combat_okno" NavigationUIVisibility="Hidden" />
-        <Label x:Name="Player_level" Content="" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="85,146,0,0"/>
 
 
     </Grid>

@@ -21,12 +21,12 @@ namespace rozhodovani
     public partial class Combat : Page
     {
 
-        public delegate void OnBattleEnd(int id);
-        public static event OnBattleEnd OnBattleEndEvent;
+
         Dialog dialog;
         Combat_controler controler;
-
         CombatViewModel model;
+
+        
 
         public Combat(Dialog dialog)  
         {
@@ -34,20 +34,25 @@ namespace rozhodovani
             InitializeComponent();
             this.dialog = dialog;
             this.controler = dialog.Combat;
-            model = new CombatViewModel(controler.hrac, controler.enemy);
+            this.model = new CombatViewModel(controler.hrac, controler.enemy);
 
-            OnBattleEndEvent += EndCombat;
 
             this.DataContext = model;
 
 
         }
 
-        private void EndCombat(int id)
+        private void Button_Click_Continue(object sender, RoutedEventArgs e)
         {
+            if(model.BattleResult == 0)
+                controler.hrac.level++;
+            NavigationService.Navigate(new Pribeh(dialog.moznost[model.BattleResult].dialog, controler.hrac.level));
 
-           controler.hrac.level++;
-           NavigationService.Navigate(new Pribeh(dialog.moznost[id].dialog, controler.hrac.level));
         }
+        
+
+
+
+
     }
 }

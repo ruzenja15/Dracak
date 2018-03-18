@@ -9,7 +9,26 @@
       Title="Menu">
 
     <Grid>
-        <Button Content="Button" HorizontalAlignment="Left" Margin="228,174,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+        <Grid.Background>
+            <ImageBrush ImageSource="img/1.jpg"/>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+
+        </Grid.RowDefinitions>
+        
+        <Button Click="Button_Click" Grid.Column="0" Grid.Row="1" Margin="150,10">
+            <Button.Background>
+                <ImageBrush ImageSource="img/button.png"/>
+            </Button.Background>
+        </Button>
 
     </Grid>
 </Page>

@@ -17,7 +17,7 @@ namespace rozhodovani
         public float maxmana;
         public float DMG;
         public float INT;
-        public float DEF;
+       // public float DEF;
 
 
 
